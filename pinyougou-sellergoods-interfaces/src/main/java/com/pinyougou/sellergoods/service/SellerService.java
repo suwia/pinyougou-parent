@@ -2,6 +2,7 @@ package com.pinyougou.sellergoods.service;
 
 import com.pinyougou.pojo.TbSeller;
 import entity.PageResult;
+import entity.Result;
 
 import java.util.List;
 /**
@@ -58,5 +59,14 @@ public interface SellerService {
 	 * @return
 	 */
 	public PageResult findPage(TbSeller seller, int pageNum,int pageSize);
+
+	/**
+	 * @Author sirc_hzr
+	 * @Description //TODO 根据主键id更改商家状态
+	 * @Date 10:24 2019/2/13
+	 * @Param [sellerId, status]
+	 **/
+
+	public void updataStatus(String sellerId, String status);
 	
 }

@@ -59,7 +59,7 @@ public class BrandServiceImpl implements BrandService {
 	@Override
 	public PageResult findPaginResult(TbBrand brand, int pageSize, int pageNum) {
 		PageHelper.startPage(pageNum, pageSize);
-		
+		System.out.println("brand = [" + brand + "], pageSize = [" + pageSize + "], pageNum = [" + pageNum + "]");
 		TbBrandExample example = new TbBrandExample();
 		
 		if(brand != null) {

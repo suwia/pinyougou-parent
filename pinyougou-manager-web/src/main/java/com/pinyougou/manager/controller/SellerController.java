@@ -110,5 +110,24 @@ public class SellerController {
 	public PageResult search(@RequestBody TbSeller seller, int page, int rows  ){
 		return sellerService.findPage(seller, page, rows);		
 	}
+
+	/**
+	 * @Author sirc_hzr
+	 * @Description //TODO 根据商家主键id修改商家审核状态
+	 * @Date 16:15 2019/2/13
+	 * @Param [sellerId, status]
+	 * @return entity.Result
+	 **/
+	
+	@RequestMapping("/updataStatus")
+	public Result updataStatus(String sellerId, String status) {
+		try {
+			sellerService.updataStatus(sellerId, status);
+			return new Result(true, "更改状态成功");
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new Result(false, "更改状态失败");
+		}
+	}
 	
 }
